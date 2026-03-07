@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Ensure WP-rendered content images are responsive */
+@layer components {
+  .wp-content img {
+    @apply max-w-full h-auto rounded-lg;
+  }
+
+  .wp-content figure {
+    @apply my-6;
+  }
+
+  .wp-content figcaption {
+    @apply text-sm text-gray-500 text-center mt-2;
+  }
+
+  /* Embedded Spotify iframes */
+  .wp-content iframe {
+    @apply max-w-full rounded-lg;
+  }
+}
