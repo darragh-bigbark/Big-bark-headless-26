@@ -32,19 +32,19 @@ export default function Header() {
                 alt="The Big Bark"
                 width={150}
                 height={78}
-                className="h-10 w-auto"
+                className="h-8 w-auto"
                 priority
               />
             </div>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden xl:flex items-center gap-0.5">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`px-3 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap ${
+                className={`px-2.5 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap ${
                   pathname === link.href
                     ? 'bg-white/20 text-white'
                     : 'text-white/80 hover:bg-white/10 hover:text-white'
@@ -55,15 +55,10 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Social icons (desktop) */}
-          <div className="hidden xl:flex items-center gap-3 shrink-0">
-            <SocialIcons />
-          </div>
-
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="xl:hidden p-2 rounded hover:bg-white/10 transition-colors"
+            className="lg:hidden p-2 rounded hover:bg-white/10 transition-colors"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
           >
@@ -91,7 +86,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="xl:hidden border-t border-white/20 bg-bigbark-blue">
+        <div className="lg:hidden border-t border-white/20 bg-bigbark-blue">
           <nav className="px-4 py-3 space-y-1">
             {navLinks.map((link) => (
               <Link
