@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -24,11 +25,17 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link
-            href="/"
-            className="font-extrabold text-xl tracking-tight text-white hover:text-white/90 transition-colors shrink-0"
-          >
-            The Big Bark
+          <Link href="/" className="shrink-0" aria-label="The Big Bark — Home">
+            <div className="bg-white rounded-lg px-2 py-1 hover:opacity-90 transition-opacity">
+              <Image
+                src="https://thebigbark.ie/wp-content/uploads/2024/07/thebigbark-5-1-300x156.png"
+                alt="The Big Bark"
+                width={150}
+                height={78}
+                className="h-10 w-auto"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop nav */}
